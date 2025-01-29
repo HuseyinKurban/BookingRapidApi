@@ -3,413 +3,65 @@
     Layout = "~/Views/Layout/Index.cshtml";
 }
 
-<!-- Header End -->
+
 <!-- Hero Section Begin -->
 <section class="hero-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <div class="hero-text">
-                    <h1>Sona Lüks Otel</h1>
+                    <h1>En İyi Otel Rezervasyon Platformu</h1>
                     <p>
-                        İşte uluslararası öneriler de dahil olmak üzere en iyi otel rezervasyon siteleri seyahat etmek ve düşük fiyatlı otel odaları bulmak için.
+                        Dünya genelindeki en iyi otelleri keşfedin ve sizin için en uygun konaklama seçeneklerini
+                        anında karşılaştırın. Güvenli ve kolay rezervasyon imkanıyla seyahatinizi planlamaya hemen başlayın!
                     </p>
                     <a href="#" class="primary-btn">Şimdi Keşfet</a>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
                 <div class="booking-form">
-                    <h3>Otelinizi Rezerve Edin</h3>
+                    <h3>Otel Rezervasyonu Yap</h3>
                     <form method="post" class="reservation-form">
                         <div class="form-group">
                             <label for="city">Şehir:</label>
-                            <input type="text" class="form-control" name="p" id="city" placeholder="Şehir Giriniz :" required>
+                            <input type="text" class="form-control" name="p" id="city" placeholder="Örn: İstanbul, Paris, New York" required>
                         </div>
                         <div class="form-group">
                             <label for="date-in">Giriş Tarihi:</label>
-                            <input type="date" class="form-control" name="dateIn" id="date-in" required>
+                            <input type="date" class="form-control" name="dateIn" id="date-in" required placeholder="Giriş yapacağınız tarihi seçin">
                         </div>
                         <div class="form-group">
                             <label for="date-out">Çıkış Tarihi:</label>
-                            <input type="date" class="form-control" name="dateOut" id="date-out" required>
+                            <input type="date" class="form-control" name="dateOut" id="date-out" required placeholder="Çıkış yapacağınız tarihi seçin">
                         </div>
                         <div class="form-group">
-                            <label for="guest">Kişi Sayısı:</label>
-                            <input type="number" class="form-control" name="guest" id="guest" min="1" required>
+                            <label for="guest">Yetişkin Sayısı:</label>
+                            <input type="number" class="form-control" name="guest" id="guest" min="1" required placeholder="Örn: 2">
                         </div>
                         <div class="form-group">
                             <label for="children">Çocuk Sayısı:</label>
-                            <input type="number" class="form-control" name="children" id="children" min="0" required>
+                            <input type="number" class="form-control" name="children" id="children" min="0" required placeholder="Örn: 1">
                         </div>
-                        <button type="submit" class="btn btn-primary">Otel Ara</button>
+                        <button type="submit" class="btn btn-primary">En İyİ Otelleri Ara</button>
                     </form>
 
                 </div>
             </div>
         </div>
     </div>
-    <div class="hero-slider owl-carousel">
-        <div class="hs-item set-bg" data-setbg="/sona-master/img/hero/hero-1.jpg"></div>
-        <div class="hs-item set-bg" data-setbg="/sona-master/img/hero/hero-2.jpg"></div>
-        <div class="hs-item set-bg" data-setbg="/sona-master/img/hero/hero-3.jpg"></div>
-    </div>
+
+
+    @await Component.InvokeAsync("_BookingHeroSliderComponentPartial")
+
+    
 </section>
 <!-- Hero Section End -->
-<!-- About Us Section Begin -->
-<section class="aboutus-section spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="about-text">
-                    <div class="section-title">
-                        <span>Hakkımızda</span>
-                        <h2>Intercontinental LA <br />Westlake Luxury Hotel</h2>
-                    </div>
-                    <p class="f-para">
-                        Sona.com, önde gelen bir online konaklama platformudur. Seyahat tutkusuyla hareket ediyoruz.
-                        Her gün, 41 dilde 90 yerel web sitesi üzerinden milyonlarca gezgine ilham veriyor ve onlara ulaşıyoruz.
-                    </p>
-                    <p class="s-para">
-                        Bu nedenle, mükemmel oteli, tatil kiralamalarını, resortları, daireleri, konukevlerini veya ağaç evleri
-                        rezerve etmek söz konusu olduğunda, size en iyi seçenekleri sunuyoruz.
-                    </p>
-                    <a href="#" class="primary-btn about-btn">Daha Fazla Bilgi Edinin</a>
+@await Component.InvokeAsync("_BookingAboutComponentPartial")
 
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="about-pic">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <img src="~/sona-master/img/about/about-1.jpg" alt="">
-                        </div>
-                        <div class="col-sm-6">
-                            <img src="~/sona-master/img/about/about-2.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- About Us Section End -->
-<!-- Services Section End -->
-<section class="services-section spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title">
-                    <span>Ne Yapıyoruz</span>
-                    <h2>Hizmetlerimizi Keşfedin</h2>
+@await Component.InvokeAsync("_BookingServicesComponentPartial")
 
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-sm-6">
-                <div class="service-item">
-                    <i class="flaticon-036-parking"></i>
-                    <h4>Seyahat Planı</h4>
-                    <p>
-                        Seyahatinizi en iyi şekilde planlamanıza yardımcı oluyoruz. Tatiliniz boyunca ihtiyaç duyabileceğiniz
-                        tüm hizmetleri içeren özel seyahat planları sunuyoruz.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="service-item">
-                    <i class="flaticon-033-dinner"></i>
-                    <h4>Yiyecek & İçecek Hizmeti</h4>
-                    <p>
-                        Geniş menü seçeneklerimizle, dünya mutfağından lezzetler ve özel içecek servisiyle konforlu bir
-                        yemek deneyimi sunuyoruz.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="service-item">
-                    <i class="flaticon-026-bed"></i>
-                    <h4>Çocuk Bakımı</h4>
-                    <p>
-                        Profesyonel bakıcılarımız ile çocuklarınız güvende. Tatiliniz boyunca çocuk bakım hizmetimizden
-                        faydalanarak rahatça dinlenebilirsiniz.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="service-item">
-                    <i class="flaticon-024-towel"></i>
-                    <h4>Çamaşırhane Hizmeti</h4>
-                    <p>
-                        Konforunuz için otelimizde hızlı ve profesyonel çamaşırhane hizmeti sunuyoruz. Giysileriniz
-                        her zaman temiz ve bakımlı olur.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="service-item">
-                    <i class="flaticon-044-clock-1"></i>
-                    <h4>Özel Şoför Hizmeti</h4>
-                    <p>
-                        Şehir içi ve şehir dışı seyahatleriniz için profesyonel şoförlü araç kiralama hizmetimizle
-                        konforlu ve güvenli yolculuklar yapabilirsiniz.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="service-item">
-                    <i class="flaticon-012-cocktail"></i>
-                    <h4>Bar & İçecek Hizmeti</h4>
-                    <p>
-                        Özel kokteyller ve kaliteli içecek seçenekleriyle keyifli vakit geçirebileceğiniz barımızda
-                        eşsiz bir atmosfer sizi bekliyor.
-                    </p>
-                </div>
-            </div>
-        </div>
+@await Component.InvokeAsync("_BookingHomeRoomComponentPartial")
 
-    </div>
-</section>
-<!-- Services Section End -->
-<!-- Home Room Section Begin -->
-<section class="hp-room-section">
-    <div class="container-fluid">
-        <div class="hp-room-items">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="hp-room-item set-bg" data-setbg="/sona-master/img/room/room-b1.jpg">
-                        <div class="hr-text">
-                            <h3>Çift Kişilik Oda</h3>
-                            <h2>199$<span>/Gecelik</span></h2>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td class="r-o">Boyut:</td>
-                                        <td>28 m²</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Kapasite:</td>
-                                        <td>Maksimum 5 kişi</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Yatak:</td>
-                                        <td>King Yatak</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Hizmetler:</td>
-                                        <td>Wifi, Televizyon, Banyo, vb.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <a href="#" class="primary-btn">Detayları Görüntüle</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="hp-room-item set-bg" data-setbg="/sona-master/img/room/room-b2.jpg">
-                        <div class="hr-text">
-                            <h3>Premium King Oda</h3>
-                            <h2>159$<span>/Gecelik</span></h2>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td class="r-o">Boyut:</td>
-                                        <td>30 m²</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Kapasite:</td>
-                                        <td>Maksimum 5 kişi</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Yatak:</td>
-                                        <td>King Yatak</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Hizmetler:</td>
-                                        <td>Wifi, Televizyon, Banyo, vb.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <a href="#" class="primary-btn">Detayları Görüntüle</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="hp-room-item set-bg" data-setbg="/sona-master/img/room/room-b3.jpg">
-                        <div class="hr-text">
-                            <h3>Deluxe Oda</h3>
-                            <h2>198$<span>/Gecelik</span></h2>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td class="r-o">Boyut:</td>
-                                        <td>32 m²</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Kapasite:</td>
-                                        <td>Maksimum 5 kişi</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Yatak:</td>
-                                        <td>King Yatak</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Hizmetler:</td>
-                                        <td>Wifi, Televizyon, Banyo, vb.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <a href="#" class="primary-btn">Detayları Görüntüle</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="hp-room-item set-bg" data-setbg="/sona-master/img/room/room-b4.jpg">
-                        <div class="hr-text">
-                            <h3>Aile Odası</h3>
-                            <h2>299$<span>/Gecelik</span></h2>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td class="r-o">Boyut:</td>
-                                        <td>35 m²</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Kapasite:</td>
-                                        <td>Maksimum 5 kişi</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Yatak:</td>
-                                        <td>King Yatak</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Hizmetler:</td>
-                                        <td>Wifi, Televizyon, Banyo, vb.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <a href="#" class="primary-btn">Detayları Görüntüle</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+@await Component.InvokeAsync("_BookingTestimonialComponentPartial")
 
-</section>
-<!-- Home Room Section End -->
-<!-- Testimonial Section Begin -->
-<section class="testimonial-section spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title">
-                    <span>Müşteri Yorumları</span>
-                    <h2>Müşterilerimiz Ne Diyor?</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <div class="testimonial-slider owl-carousel">
-                    <div class="ts-item">
-                        <p>
-                            Eşimle birlikte sakin ve huzurlu bir tatil geçirmek için Sona Otel’i tercih ettik. Otelin sunduğu hizmetler, odaların konforu ve restoranın lezzetli yemekleri bizi fazlasıyla memnun etti. Her detay düşünülmüştü. Harika bir deneyimdi!
-                        </p>
-                        <div class="ti-author">
-                            <div class="rating">
-                                <i class="icon_star"></i>
-                                <i class="icon_star"></i>
-                                <i class="icon_star"></i>
-                                <i class="icon_star"></i>
-                                <i class="icon_star-half_alt"></i>
-                            </div>
-                            <h5> - Alexander Vasquez</h5>
-                        </div>
-                        <img src="~/sona-master/img/testimonial-logo.png" alt="Müşteri Yorumu">
-                    </div>
-                    <div class="ts-item">
-                        <p>
-                            Sona Otel’de geçirdiğimiz konaklama tam anlamıyla mükemmeldi. Personel son derece nazik ve yardımseverdi, odalar ise konforlu ve temizdi. Otelin merkezi konumu sayesinde şehri keşfetmek çok kolay oldu. Kesinlikle tekrar geleceğiz!
-                        </p>
-                        <div class="ti-author">
-                            <div class="rating">
-                                <i class="icon_star"></i>
-                                <i class="icon_star"></i>
-                                <i class="icon_star"></i>
-                                <i class="icon_star"></i>
-                                <i class="icon_star-half_alt"></i>
-                            </div>
-                            <h5> - Alexander Vasquez</h5>
-                        </div>
-                        <img src="~/sona-master/img/testimonial-logo.png" alt="Müşteri Yorumu">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Testimonial Section End -->
-<!-- Blog Section Begin -->
-<section class="blog-section spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title">
-                    <span>Otel Haberleri</span>
-                    <h2>Blog & Etkinliklerimiz</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="blog-item set-bg" data-setbg="/sona-master/img/blog/blog-1.jpg">
-                    <div class="bi-text">
-                        <span class="b-tag">Seyahat Rehberi</span>
-                        <h4><a href="#">Kanada’da Tremblant Keşfi</a></h4>
-                        <div class="b-time"><i class="icon_clock_alt"></i> 15 Nisan 2025</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="blog-item set-bg" data-setbg="/sona-master/img/blog/blog-2.jpg">
-                    <div class="bi-text">
-                        <span class="b-tag">Kamp</span>
-                        <h4><a href="#">Sabit Karavan Seçimi</a></h4>
-                        <div class="b-time"><i class="icon_clock_alt"></i> 15 Nisan 2025</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="blog-item set-bg" data-setbg="/sona-master/img/blog/blog-3.jpg">
-                    <div class="bi-text">
-                        <span class="b-tag">Etkinlik</span>
-                        <h4><a href="#">Copper Canyon Macerası</a></h4>
-                        <div class="b-time"><i class="icon_clock_alt"></i> 21 Nisan 2025</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <div class="blog-item small-size set-bg" data-setbg="/sona-master/img/blog/blog-wide.jpg">
-                    <div class="bi-text">
-                        <span class="b-tag">Etkinlik</span>
-                        <h4><a href="#">Kanada'nın Arktik Şehri Iqaluit'e Yolculuk</a></h4>
-                        <div class="b-time"><i class="icon_clock_alt"></i> 08 Nisan 2025</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="blog-item small-size set-bg" data-setbg="/sona-master/img/blog/blog-10.jpg">
-                    <div class="bi-text">
-                        <span class="b-tag">Seyahat</span>
-                        <h4><a href="#">Barselona’ya Yolculuk</a></h4>
-                        <div class="b-time"><i class="icon_clock_alt"></i> 12 Nisan 2025</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
+@await Component.InvokeAsync("_BookingBlogSectionComponentPartial")
