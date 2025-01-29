@@ -28,7 +28,7 @@ namespace BookingRapidApi.Controllers
                 RequestUri = new Uri($"https://booking-com15.p.rapidapi.com/api/v1/hotels/searchDestination?query={p}"),
                 Headers =
                 {
-                    { "x-rapidapi-key", "8c0ac161cemshec01a696e062cf6p17a13cjsne40887c4d4cd" },
+                    { "x-rapidapi-key", "api keyiniz" },
                     { "x-rapidapi-host", "booking-com15.p.rapidapi.com" },
                 },
             };
@@ -67,7 +67,7 @@ namespace BookingRapidApi.Controllers
                 RequestUri = new Uri($"https://booking-com15.p.rapidapi.com/api/v1/hotels/searchHotels?dest_id={destId}&search_type=CITY&arrival_date={dateIn}&departure_date={dateOut}&adults={guest}&children_age={children}&room_qty=1&page_number=1&units=metric&temperature_unit=c&languagecode=en-us&currency_code=AED"),
                 Headers =
                 {
-                    { "x-rapidapi-key", "8c0ac161cemshec01a696e062cf6p17a13cjsne40887c4d4cd" },
+                    { "x-rapidapi-key", "api keyiniz" },
                     { "x-rapidapi-host", "booking-com15.p.rapidapi.com" },
                 },
             };
