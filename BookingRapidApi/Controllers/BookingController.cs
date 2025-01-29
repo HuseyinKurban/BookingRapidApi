@@ -16,6 +16,7 @@ namespace BookingRapidApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Home(string p, string dateIn, string dateOut, int guest, int children)
         {
+            
             if (string.IsNullOrEmpty(p) || string.IsNullOrEmpty(dateIn) || string.IsNullOrEmpty(dateOut))
             {
                 return View();
@@ -47,7 +48,7 @@ namespace BookingRapidApi.Controllers
                     return View();
                 }
 
-                // Seçilen bilgileri otel arama metoduna yönlendiriyoruz
+               
                 return RedirectToAction("BookingHotelSearch", new { destId = destinationId, dateIn, dateOut, guest, children });
             }
         }
