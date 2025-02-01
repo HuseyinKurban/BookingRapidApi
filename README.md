@@ -41,3 +41,5 @@ API’den gelen JSON verilerini işlemek için **ViewModel yapıları** oluştur
 ---
 ![screencapture-localhost-7152-Booking-Home-2025-01-30-00_10_56](https://github.com/user-attachments/assets/cb0c70e8-d3a8-46a0-9e68-c1672c87d67b)
 ![screencapture-localhost-7152-Booking-BookingHotelSearch-2025-01-30-00_11_45](https://github.com/user-attachments/assets/5d00caab-46d5-4f08-b9aa-83405841d351)
+
+
